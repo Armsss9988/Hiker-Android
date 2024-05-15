@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.hiker.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:name="ActionHomeToAddNew"
+            android:id="@+id/action_nav_home_to_fragment_add_new"
+            app:destination="@id/nav_add_new">
+            <argument
+                android:name="myArg"
+                app:argType="integer"
+                android:defaultValue="-1" />
+        </action>
+        <action
+            android:id="@+id/action_nav_home_to_nav_active"
+            app:destination="@id/nav_active" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="com.example.hiker.ui.history.HistoryFragment"
+        android:label="@string/menu_history"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_nav_history_to_nav_update"
+            app:destination="@id/nav_update" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.hiker.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_nav_gallery_to_nav_image_active"
+            app:destination="@id/nav_image_active" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_add_new"
+        android:name="com.example.hiker.ui.history.addnew.AddHikingFragment"
+        tools:layout="@layout/fragment_add_new"
+        android:label="Create New Hiking">
+        <action
+            android:id="@+id/action_nav_add_new_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_add_new_to_OSMMapFragment"
+            app:destination="@id/OSMMapFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/OSMMapFragment2"
+        android:name="com.example.hiker.ui.map.OSMMapFragment"
+        android:label="Map"
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/action_OSMMapFragment2_to_nav_add_new"
+            app:destination="@id/nav_add_new" />
+    </fragment>
+    <fragment
+        android:id="@+id/OSMMapFragment"
+        android:name="com.example.hiker.ui.map.OSMMapFragment"
+        android:label="Map"
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/action_OSMMapFragment_to_nav_add_new"
+            app:destination="@id/nav_add_new" />
+        <action
+            android:id="@+id/action_OSMMapFragment_to_nav_update"
+            app:destination="@id/nav_update" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_update"
+        android:name="com.example.hiker.ui.history.update.UpdateHikingFragment"
+        android:label="Update Hiking"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_nav_update_to_nav_history"
+            app:destination="@id/nav_history" />
+        <action
+            android:id="@+id/action_nav_update_to_OSMMapFragment"
+            app:destination="@id/OSMMapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_active"
+        android:name="com.example.hiker.ui.map.ActiveMapFragment"
+        android:label="Active Hiking"
+        tools:layout="@layout/fragment_active_hiking">
+        <action
+            android:id="@+id/action_nav_active_to_nav_image_active"
+            app:destination="@id/nav_image_active" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_image_active"
+        android:name="com.example.hiker.ui.imageview.ImageViewFragment"
+        android:label="Hiker Gallery" >
+        <action
+            android:id="@+id/action_nav_image_active_to_nav_image_open"
+            app:destination="@id/nav_image_open" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_image_open"
+        android:name="com.example.hiker.ui.imageview.OpenImageFragment"
+        android:label="View Image" />
+
+
+</navigation>

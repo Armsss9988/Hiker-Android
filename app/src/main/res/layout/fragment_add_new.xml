@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.history.addnew.AddHikingFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/label_hiking_list"
+        android:paddingHorizontal="10dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/name_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:expandedHintEnabled="false"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:boxBackgroundColor="@color/white"
+                android:background="@drawable/row_hiking_list"
+                android:hint="@string/name_of_the_hike">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name_input"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:id="@+id/location_and_route"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/location_and_route_bg"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingHorizontal="5dp">
+
+                <com.google.android.material.button.MaterialButton
+                    app:iconGravity="textTop"
+                    app:icon="@drawable/baseline_map_24"
+                    app:iconSize="30dp"
+                    app:iconTint="#FF771111"
+                    android:id="@+id/choose_with_map"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@android:color/transparent"
+                    android:elevation="20dp"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/choose_with_map"
+                    android:textColor="#FF000000"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/location_label"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="@string/location"
+                    app:expandedHintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/location_input"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/location_and_route_bg"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="Waypoints" />
+
+                        <ImageView
+                            android:id="@+id/remove"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_toStartOf="@id/button_plus"
+                            android:src="@drawable/rubbish_bin_svgrepo_com" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/button_plus"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentEnd="true"
+                            android:background="@drawable/button_plus_waypoint"
+                            android:text="+"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/waypoint_route"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical"
+                        android:padding="10dp"></LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/length_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/length_label"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="@string/length_of_the_hike"
+                        app:expandedHintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/length_input"
+                            android:layout_width="150dp"
+                            android:maxLines="1"
+                            android:scrollHorizontally="true"
+                            android:layout_height="wrap_content" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/length_type_label"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="Unit"
+                        app:expandedHintEnabled="false">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/length_type_input"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="bottom|center_horizontal"
+                            android:hint="m"
+                            android:inputType="none" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/time_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+
+                <include layout="@layout/time_input"
+                    android:id="@+id/time_set"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="50dp"/>
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:id="@+id/calendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#136600"
+                        android:elevation="20dp"
+                        android:paddingHorizontal="10dp"
+                        android:text="@string/hiking_date"
+                        android:textColor="#FFFFFF"
+                        app:icon="@drawable/baseline_calendar_month_24"
+                        app:cornerRadius="8dp"
+                        app:rippleColor="#33AAAAAA"
+                        app:strokeColor="#7766"
+                        app:strokeWidth="2dp"
+                        app:iconGravity="textEnd"
+                        app:iconSize="25dp"
+                        app:iconTint="#FF771111" />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/parking_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:background="@drawable/row_hiking_list"
+                        android:padding="10dp"
+                        app:expandedHintEnabled="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:hint="@string/parking_label"
+                        >
+
+                        <AutoCompleteTextView
+                            android:gravity="bottom|center"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:inputType="none" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/parking_input"
+                        android:layout_width="wrap_content"
+                        android:gravity="bottom"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/difficulty_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="1">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/row_hiking_list"
+                        android:padding="10dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        app:expandedHintEnabled="false"
+                        android:gravity="bottom"
+                        android:hint="@string/difficulty_level">
+                        <AutoCompleteTextView
+                            android:id="@+id/difficulty_spinner"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:gravity="bottom|center"
+                            android:hint="Select"
+                            android:inputType="none"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:background="@drawable/row_hiking_list"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/description_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:expandedHintEnabled="false"
+                android:hint="@string/description">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/description_input"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:gravity="start|top"
+                    android:lines="8"
+                    android:hint="@string/description_hint"
+                    android:minLines="6"
+                    android:maxLines="10" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/submit_btn"
+                app:iconGravity="textEnd"
+                app:icon="@drawable/baseline_calendar_month_24"
+                app:iconSize="25dp"
+                app:iconTint="#FF771111"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:backgroundTint="#136600"
+                android:elevation="20dp"
+                android:paddingHorizontal="10dp"
+                android:text="Add New"
+                app:cornerRadius="8dp"
+                app:rippleColor="#33AAAAAA"
+                app:strokeColor="#7766"
+                app:strokeWidth="2dp"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

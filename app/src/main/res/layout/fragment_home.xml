@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <Button
+        android:id="@+id/add_new"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#FF009900"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:elevation="50dp"
+        android:shadowColor="@color/black"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:text="@string/plan_new_hike"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/current_hiking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:paddingHorizontal="10dp"
+        android:elevation="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@drawable/row_hiking_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_new">
+
+        <TextView
+            android:background="@drawable/description_val_list"
+            android:textAllCaps="true"
+            android:paddingHorizontal="10dp"
+            android:id="@+id/current_hiking_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Your current Hiking" />
+        <LinearLayout
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/row_hiking_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:background="@drawable/label_hiking_list"
+                android:paddingHorizontal="10dp"
+                android:id="@+id/current_name_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Hiking Name" />
+
+            <TextView
+                android:paddingHorizontal="10dp"
+                android:id="@+id/current_name_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="TextView" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/row_hiking_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/label_hiking_list"
+                android:id="@+id/current_hiking_location_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Hiking Location" />
+
+            <TextView
+                android:paddingHorizontal="10dp"
+                android:id="@+id/current_location_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/current_button_show_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF009900"
+            android:text="View" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/row_hiking_list"
+        android:paddingHorizontal="10dp"
+        android:id="@+id/next_hiking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_hiking">
+            <TextView
+                android:background="@drawable/description_val_list"
+                android:paddingHorizontal="10dp"
+                android:id="@+id/next_hiking_label"
+                android:textAllCaps="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:gravity="center"
+                android:text="Your next Hiking" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/row_hiking_list"
+            android:paddingHorizontal="10dp">
+            <TextView
+                android:background="@drawable/label_hiking_list"
+                android:paddingHorizontal="10dp"
+                android:id="@+id/hiking_name_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Hiking Name" />
+            <TextView
+                android:id="@+id/name_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:gravity="center"
+                android:text="TextView" />
+
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/row_hiking_list"
+        android:paddingHorizontal="10dp">
+        <TextView
+            android:background="@drawable/label_hiking_list"
+            android:paddingHorizontal="10dp"
+            android:id="@+id/hiking_location_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+            android:gravity="center"
+            android:text="Hiking Location" />
+
+        <TextView
+            android:id="@+id/location_value"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+    </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Please press start before time come to submit start this Hiking!"/>
+
+        <Button
+            android:id="@+id/button_show_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF009900"
+            android:text="Start" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
